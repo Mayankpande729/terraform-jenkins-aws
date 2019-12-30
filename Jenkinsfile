@@ -1,3 +1,4 @@
+  
 // Jenkinsfile
 String credentialsId = 'awstoJenkins'
 
@@ -12,7 +13,6 @@ try {
   // Run terraform init
   stage('init') {
     node {
-
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
         credentialsId: credentialsId,
@@ -20,11 +20,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-        {
-            sh "pwd"
-            sh "ls -ltra"
-            sh '/usr/local/bin/terraform init'
-        }
+          sh '/usr/local/bin/terraform init'
         }
       }
     }
@@ -40,12 +36,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-        {
-            sh "pwd"
-            sh "ls -ltra"
-            sh '/usr/local/bin/terraform plan'
-        }
-
+          sh '/usr/local/bin/terraform plan'
         }
       }
     }
@@ -63,12 +54,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            {
-              sh "pwd"
-              sh "ls -ltra"
-              sh '/usr/local/bin/terraform apply -auto-approve'
-            }
-
+            sh '/usr/local/bin/terraform apply -auto-approve'
           }
         }
       }
@@ -84,12 +70,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            { 
-              sh "pwd"
-              sh "ls -ltra"
-              sh '/usr/local/bin/terraform show'
-            }
-
+            sh '/usr/local/bin/terraform show'
           }
         }
       }
