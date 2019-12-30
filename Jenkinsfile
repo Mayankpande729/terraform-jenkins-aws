@@ -60,23 +60,7 @@ try {
       }
     }
     
-    // Run terraform destroy
-    stage('destroy') {
-      node {
-        withCredentials([[
-          $class: 'AmazonWebServicesCredentialsBinding',
-          credentialsId: credentialsId,
-          accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-          secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-        ]]) {
-          ansiColor('xterm') {
-            sh '/usr/local/bin/terraform destroy -auto-approve'
-          }
-        }
-      }
-    }
-    
-    // Run terraform show
+  // Run terraform show
     stage('show') {
       node {
         withCredentials([[
