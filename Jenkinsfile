@@ -20,7 +20,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-         {
+        {
             sh "pwd"
             sh "ls -ltra"
             sh '/usr/local/bin/terraform init'
@@ -40,7 +40,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-         {
+        {
             sh "pwd"
             sh "ls -ltra"
             sh '/usr/local/bin/terraform plan'
@@ -63,11 +63,11 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-           {
+            {
               sh "pwd"
               sh "ls -ltra"
               sh '/usr/local/bin/terraform apply -auto-approve'
-          }
+            }
 
           }
         }
@@ -84,11 +84,11 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-           {
+            { 
               sh "pwd"
               sh "ls -ltra"
               sh '/usr/local/bin/terraform show'
-          }
+            }
 
           }
         }
