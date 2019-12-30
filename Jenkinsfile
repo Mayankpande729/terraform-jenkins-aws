@@ -20,7 +20,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-         dir("/app/local/terraform-jenkins-aws") {
+         {
             sh "pwd"
             sh "ls -ltra"
             sh '/usr/local/bin/terraform init'
